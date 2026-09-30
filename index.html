@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Coming Soon | Schramm AdLabs</title>
+    
+    <!-- Favicon updated to ad labs.webp -->
+    <link rel="icon" href="ad labs.webp" type="image/webp">
+    
+    <!-- Premium Typography & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Premium Dark Theme Variables */
+        :root {
+            --primary-blue: #0973BA;
+            --bg-dark: #030712; 
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Engaging Background Elements */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        /* Ambient Breathing Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 70vw;
+            height: 70vw;
+            max-width: 800px;
+            max-height: 800px;
+            background: radial-gradient(circle, rgba(9, 115, 186, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: breathe 6s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes breathe {
+            0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        /* Center Content Card */
+        .content-card {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 70px 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(40px);
+            width: 90vw;
+            max-width: 500px;
+        }
+
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LOGO PRESENTATION */
+        .brand-logo-link {
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .brand-logo-link:hover {
+            transform: scale(1.03);
+        }
+
+        .brand-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 45px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        h1 strong {
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--white) 20%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Minimal Footer Contact Details */
+        footer {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+            animation: fadeIn 2s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding: 0 20px;
+        }
+
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-info a i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .contact-info a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .division-text {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .content-card {
+                padding: 40px 30px;
+            }
+            .brand-logo {
+                margin-bottom: 30px;
+            }
+            .contact-info {
+                gap: 15px;
+                flex-direction: column;
+                align-items: center;
+            }
+            footer {
+                bottom: 20px;
+            }
+            h1 {
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient animated background glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- Main Content -->
+    <main class="content-card">
+        <!-- Logo hyperlinked to the specified URL -->
+        <a href="https://www.kbjindia.com/schramm-adlabs" class="brand-logo-link" target="_blank" rel="noopener noreferrer">
+            <img src="logosad.png" alt="Schramm AdLabs" class="brand-logo">
+        </a>
+        <h1>We are <br><strong>coming soon</strong></h1>
+    </main>
+
+    <!-- Minimal Contact Footer -->
+    <footer>
+        <div class="contact-info">
+            <a href="tel:+917304148788"><i class="fa-solid fa-phone"></i> +91 7304148788</a>
+            <a href="mailto:info@schrammadlabs.com"><i class="fa-solid fa-envelope"></i> info@schrammadlabs.com</a>
+        </div>
+        <div class="division-text">
+            A Division of KBJ HR INDIA PRIVATE LIMITED
+        </div>
+    </footer>
+
+</body>
+</html>
